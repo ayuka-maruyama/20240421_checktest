@@ -50,7 +50,7 @@
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header-hidden">お問い合わせの種類</th>
                     <td class="confirm-table__text">
-                        <input type="text" name="content" value="{{ $contact['building'] }}" readonly />
+                        <input type="text" name="content" value="{{ $content }}" readonly />
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
@@ -63,7 +63,7 @@
         </div>
 
         <div class="form-submit">
-            <form class="form" action="/confirm/thanks" method="get">
+            <form class="form" action="/thanks" method="post">
                 @csrf
                 <div class="form__button-ok">
                     <button class="form__button-submit--ok" type="submit">送信</button>

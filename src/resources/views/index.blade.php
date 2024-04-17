@@ -80,9 +80,11 @@
             <p class="form__label-required">※</p>
         </div>
         <div class="form-group__text-content">
-            <select name="content">
+            <select name="category_id">
                 <option disabled selected hidden>選択してください</option>
-                <option>商品の交換について</option>
+                @foreach ($categories as $category)
+                    <option value="{{ $category['id'] }}">{{ $category['content'] }}</option>
+                @endforeach
             </select>
         </div>
     </div>
