@@ -1,0 +1,23 @@
+.header {
+    width: 100%;
+    border-bottom: 1px solid #c9c6c6;
+    position: relative;
+}
+
+.header__inner {
+    max-width: 1230px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.header__title {
+    font-size: 26px;
+    font-weight: bold;
+    padding: 0;
+}
+
+.header__link {
+    color: #8B7969;
+    text-decoration: none;
+    cursor: pointer;
+}
