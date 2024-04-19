@@ -13,6 +13,11 @@ class LoginController extends Controller
         return view('login');
     }
 
+    public function register()
+    {
+        return view('register');
+    }
+
     public function admin(LoginRequest $request)
     {
         $contact = $request->only(['email', 'password']);

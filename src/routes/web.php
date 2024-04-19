@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,5 +20,7 @@ Route::get('/', [ContactController::class, 'index']);
 Route::post('/confirm', [ContactController::class, 'confirm']);
 Route::post('/', [ContactController::class, 'index']);
 Route::post('/thanks', [ContactController::class, 'store']); 
+Route::get('/register', [LoginController::class, 'register']);
+Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/admin', [LoginController::class, 'admin']);
