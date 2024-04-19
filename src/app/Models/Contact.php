@@ -22,6 +22,18 @@ class Contact extends Model
         'detail'
     ];
 
+    public static $rules = array(
+        'category_id' => 'required',
+        'first_name' => 'required|string',
+        'last-name' => 'required|string',
+        'gender' => 'required',
+        'email' => 'required|email',
+        'tell' => 'required|digits_between:1,5',
+        'address' => 'required|string',
+        'building' => 'string',
+        'detail' => 'required|max:120'
+  );
+
     public function category()
     {
         return $this->belongsTo(Category::class);

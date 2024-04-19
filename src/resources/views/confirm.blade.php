@@ -14,19 +14,19 @@
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header">お名前</th>
                     <td class="confirm-table__text">
-                        <input type="text" name="name" value="{{ $full_name }}" readonly />
+                        <input type="text" name="full_name" value="{{ $full_name }}" readonly />
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header">性別</th>
                     <td class="confirm-table__text">
-                        <input type="text" name="gender" value="{{ $genderText }}" readonly />
+                        <input type="text" name="genderText" value="{{ $genderText }}" readonly />
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header-hidden">メールアドレス</th>
                     <td class="confirm-table__text">
-                        <input type="text" name="email" value="{{ $contact['email'] }}" readonly />
+                        <input type="text" name="email" value="{{ $email }}" readonly />
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
@@ -38,25 +38,25 @@
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header-hidden">住所</th>
                     <td class="confirm-table__text">
-                        <input type="text" name="address" value="{{ $contact['address'] }}" readonly />
+                        <input type="text" name="address" value="{{ $address }}" readonly />
                     </td>
                 </tr>
                     <tr class="confirm-table__row">
                     <th class="confirm-table__header-hidden">建物名</th>
                     <td class="confirm-table__text">
-                        <input type="text" name="building" value="{{ $contact['building'] }}" readonly />
+                        <input type="text" name="building" value="{{ $building }}" readonly />
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header-hidden">お問い合わせの種類</th>
                     <td class="confirm-table__text">
-                        <input type="text" name="content" value="{{ $content }}" readonly />
+                        <input type="text" name="category_id" value="{{ $category_id }}" readonly />
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header-hidden">お問い合わせの内容</th>
                     <td class="confirm-table__textarea">
-                        <input type="text" name="name" value="{{ $detail }}" readonly />
+                        <textarea name="detail" readonly>{{ $detail }}</textarea>
                     </td>
                 </tr>
             </table>
@@ -70,7 +70,7 @@
                 </div>
             </form>
 
-            <form class="form" action="/" method="get">
+            <form class="form" action="/" method="post">
                 @csrf
                 <div class="form__button-ng">
                     <button class="form__button-submit--ng" type="submit">修正</button>

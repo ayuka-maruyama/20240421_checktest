@@ -8,19 +8,19 @@
 .contact__header-title {
     font-size: 26px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 0;
 }
 
 .form {
     width: 80%;
     margin: 0 auto;
-    padding: 30px;
+    padding: 25px;
 }
 
 .form-group {
     display: flex;
     width: 100%;
-    margin-bottom: 20px;
+    margin-top: 20px;
     align-items: center;
     padding: 0;
 }
@@ -121,8 +121,9 @@ input[type="radio"]:checked {
     border: 1px solid #FFFFFF;
     background-color: #FFFFFF;
     text-align: start;
-    width: 5%;
+    width: 15%;
     margin: 0;
+    text-align: center;
 }
 
 .form-group__text-address input {
@@ -172,3 +173,28 @@ input[type="radio"]:checked {
     padding: 10px;
     margin-top: 15px;
 }
+
+.form__error {
+    width: 65%;
+    margin: 0 0 0 35%;
+    color: red;
+    padding-left: 30px;
+    text-align: start;
+}
+
+.form__error-one {
+    width: 65%;
+    margin: 0 0 0 auto;
+    color: red;
+    padding-left: 25px;
+}
+
+.form__error-two {
+    display: flex;
+    justify-content: space-between;
+}
+
+.error-name-l {
+    padding-right: 25%;
+}
+
