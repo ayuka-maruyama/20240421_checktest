@@ -19,7 +19,7 @@
             <h2 class="register__title-text">Register</h2>
         </div>
         <div class="register__form">
-            <form action="/login" class="register__form-area">
+            <form action="/register" class="register__form-area" method="post">
                 @csrf
                 <div class="register-item">
                     <label>お名前</label>

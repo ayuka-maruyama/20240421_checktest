@@ -8,18 +8,20 @@ use App\Http\Requests\RegisterRequest;
 
 class RegisterController extends Controller
 {
-    public function login(RegisterRequest $request)
+    public function register()
     {
-        $contact = $request->only(['name', 'email', 'password']);
-        return view('register', ['contact' => $contact]);
+        return view('register');
     }
 
     public function store(RegisterRequest $request)
     {
-        $contact = $request->only(['name', 'email', 'password']);
-        Contact::create($contact);
+        // バリデーション済みのデータを取得
+        $validatedData = $request->validated();
 
-        return view('login');
+        // ユーザーの作成などの処理を行う
+        User::create($validatedData);
+
+        // 登録後の画面などにリダイレクトする
+        return redirect('/login');
     }
-
 }

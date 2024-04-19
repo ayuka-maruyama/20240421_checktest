@@ -28,7 +28,7 @@ main {
 }
 
 .register__title-text {
-    font-size: 26px;
+    font-size: 20px;
     font-weight: bold;
     margin: 0;
     padding: 40px;
@@ -42,12 +42,12 @@ main {
 }
 
 .register__form-area {
-    font-size: 24px;
+    font-size: 22px;
 }
 
 label {
     display: block;
-    width: 70%;
+    width: 75%;
     margin: 0 auto;
     margin-bottom: 10px;
     padding: 10px 0;
@@ -74,4 +74,13 @@ input {
     padding: 10px 25px;
     margin: 15px auto;
     cursor: pointer;
+}
+
+.error {
+    width: 65%;
+    margin: 0 10%;
+    color: red;
+    padding-left: 15px;
+    text-align: start;
+    font-size: 16px;
 }
