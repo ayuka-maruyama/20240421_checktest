@@ -1,0 +1,102 @@
+.header-button__logout {
+    position: absolute;
+    top: 5%;
+    right: 15%;
+}
+
+.header-button__logout-submit {
+    width: 80px;
+    padding: 10px 15px;
+    background: #F6F6F6;
+    border: 1px solid #E0D1C4;
+    color: #E0D1C4;
+}
+
+.admin {
+    color: #8B7969;
+    max-width: 1230px;
+    margin: 0 auto;
+}
+
+.admin__title {
+    text-align: center;
+}
+
+.admin__title-text {
+    font-size: 26px;
+}
+
+.search__form {
+    width: 100%;
+    margin: 15px 20px;
+    color: #8B7969;
+    display: flex;
+    justify-content: space-between;
+}
+
+.admin__form-area {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+}
+
+.search-item__input {
+    width: 30%;
+}
+
+.search-item__select-gender {
+    width: 10%;
+}
+
+.search-item__select-category {
+    width: 20%;
+}
+
+.search-item__select {
+    width: 15%;
+}
+
+.search-item__submit {
+    width: 95px;
+}
+
+.search-text, .select-gender,
+.select-category, .select-date,
+.search__button {
+    width: 100%;
+    padding: 15px 0;
+    border: 1px solid #EDEAE6;
+    color: #8B7969;
+    text-align: center;
+}
+
+.search__button {
+    background: #8C7B6C;
+    color: #FFFFFF;
+}
+
+
+.reset__form {
+    width: 15%;
+}
+.reset__submit {
+    width: 95px;
+    margin-left: 45px;
+}
+
+.reset__button {
+    width: 100%;
+    padding: 15px 0;
+    border: 1px solid #EDEAE6;
+    color: #FFFFFF;
+    text-align: center;
+    background: #CEC1B5;
+}
+
+
+
+
+
+
+
+

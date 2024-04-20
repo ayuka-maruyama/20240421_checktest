@@ -81,4 +81,10 @@ class ContactController extends Controller
 
         return view('thanks');
     }
+
+    public function admin()
+    {
+        $contacts = Contact::all();
+        return view('admin', ['contacts' => $contacts]); // ビューに渡す変数名を修正
+    }
 }

@@ -23,7 +23,7 @@
                 @csrf
                 <div class="login-item">
                     <label>メールアドレス</label>
-                    <input type="email" name="email" placeholder="例:test@example.com">
+                    <input type="email" name="email" placeholder="例:test@example.com" value="{{ old('email') }}" />
                 </div>
                 <div class="error">
                     @error('email')
@@ -32,7 +32,7 @@
                 </div>
                 <div class="login-item">
                     <label>パスワード</label>
-                    <input type="password" name="password" placeholder="例:coachtech1106">
+                    <input type="password" name="password" placeholder="例:coachtech1106" />
                 </div>
                 <div class="error">
                     @error('password')

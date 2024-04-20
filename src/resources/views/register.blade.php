@@ -23,7 +23,7 @@
                 @csrf
                 <div class="register-item">
                     <label>お名前</label>
-                    <input type="text" name="name" placeholder="例:山田 太郎">
+                    <input type="text" name="name" placeholder="例:山田 太郎" value="{{ old('name') }}" />
                 </div>
                 <div class="error">
                     @error('name')
@@ -32,7 +32,7 @@
                 </div>
                 <div class="register-item">
                     <label>メールアドレス</label>
-                    <input type="text" name="email" placeholder="例:test@example.com">
+                    <input type="text" name="email" placeholder="例:test@example.com" value="{{ old('email') }}" />
                 </div>
                 <div class="error">
                     @error('email')
@@ -41,7 +41,7 @@
                 </div>
                 <div class="register-item">
                     <label>パスワード</label>
-                    <input type="password" name="password" placeholder="例:coachtech1106">
+                    <input type="password" name="password" placeholder="例:coachtech1106" />
                 </div>
                 <div class="error">
                     @error('password')

@@ -24,3 +24,4 @@ Route::get('/register', [LoginController::class, 'register']);
 Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/admin', [LoginController::class, 'admin']);
+Route::get('/admin', [ContactController::class, 'admin']);
