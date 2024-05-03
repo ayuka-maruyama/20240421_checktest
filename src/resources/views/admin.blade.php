@@ -55,7 +55,14 @@
                     <button type="submit" class="reset__button">リセット</button>
                 </div>
             </form>
+        </div>
+<!-- 
 
+    ここにページ遷移等のアイテムを追加する
+
+ -->
+
+        <div class="admin-table">
             <table>
                 <tr>
                     <th>お名前</th>
@@ -64,15 +71,8 @@
                     <th>お問い合わせの種類</th>
                     <th></th>
                 </tr>
-                @foreach ($contact as $contact)
-                <tr>
-                    <td>{{ $contact->first_name }} {{ $contact->last_name }}</td>
-                    <td>{{ $contact->gender }}</td>
-                    <td>{{ $contact->email }}</td>
-                    <td>{{ $contact->category_id }}</td>
-                </tr>                
-                @endforeach
             </table>
+        </div>
         
     </div>
 @endsection

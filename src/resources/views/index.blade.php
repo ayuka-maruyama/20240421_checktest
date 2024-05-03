@@ -17,19 +17,19 @@
             <p class="form__label-required">※</p>
         </div>
         <div class="form-group__text-name">
-            <input type="text" name="first-name" placeholder="例:山田" value="{{ old('fitst-name') }}">
-            <input type="text" name="last-name" placeholder="例:太郎" value="{{ old('last-name') }}">
+            <input type="text" name="first_name" placeholder="例:山田" value="{{ old('first_name') }}">
+            <input type="text" name="last_name" placeholder="例:太郎" value="{{ old('last_name') }}">
         </div>
     </div>
     <div class="form__error">
         <div class="form__error-two">
             <div class="error-name-f">
-                @error('first-name')
+                @error('first_name')
                 {{ $message }}
                 @enderror
             </div>
             <div class="error-name-l">
-                @error('last-name')
+                @error('last_name')
                 {{ $message }}
                 @enderror
             </div>
@@ -122,7 +122,7 @@
             <select name="category_id">
                 <option disabled selected hidden>選択してください</option>
                 @foreach ($categories as $category)
-                    <option value="{{ $category['id'] }}">{{ $category['content'] }}</option>
+                    <option value="{{ $category->id }}" {{ old('category_id')==$category->id ? 'selected' : '' }}>{{$category->content }}</option>
                 @endforeach
             </select>
         </div>
@@ -138,7 +138,7 @@
             <p class="form__label-required">※</p>
         </div>
         <div class="form-group__text-detail">
-            <textarea name="detail" placeholder="お問い合わせ内容をご記載ください" value="{{ old('detail') }}"></textarea>
+            <textarea name="detail" placeholder="お問い合わせ内容をご記載ください" >{{ old('detail') }}</textarea>
         </div>
     </div>
     <div class="form__error">

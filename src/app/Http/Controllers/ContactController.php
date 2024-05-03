@@ -6,78 +6,52 @@ use App\Models\Category;
 use App\Models\Contact;
 use App\Http\Requests\ContactRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Date;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 
 class ContactController extends Controller
 {
     public function index()
     {
-        $contact = Contact::with('category')->get();
         $categories = Category::all();
-        return view('index', compact('contact', 'categories'));
+        return view('index', compact('categories'));
     }
 
+    // confirm画面を表示させるための記載
     public function confirm(ContactRequest $request)
     {
-        $first_name = $request->input('first-name');
-        $last_name = $request->input('last-name');
-        $full_name = $first_name . ' ' . $last_name;
+        $contacts = $request->all();
+        $category = Category::find($request->category_id);
 
-        $gender = $request->input('gender');
-        $genderText = '';
-        if ($gender === '1' ) {
-            $genderText = '男性';
-        } elseif ($gender === '2' ) {
-            $genderText = '女性';
-        } elseif ($gender === '3' ) {
-            $genderText = 'その他';
-        }
-
-        $email = $request->input('email');
-
-        $left_tel = $request->input('left-tel');
-        $middle_tel = $request->input('middle-tel');
-        $right_tel = $request->input('right-tel');
-        $full_tel = $left_tel . $middle_tel . $right_tel;
-
-        $address = $request->input('address');
-
-        $building = $request->input('building');
-
-        $category_id = $request->input('category_id');
-        // $category_idText = '';
-        // if ($category_id === '1' ) {
-        //     $category_idText = '商品のお届けについて';
-        // } elseif ($category_id === '2' ) {
-        //     $category_idText = '商品の交換について';
-        // } elseif ($category_id === '3' ) {
-        //     $category_idText = '商品トラブル';
-        // } elseif ($category_id === '4' ) {
-        //     $category_idText = 'ショップへのお問い合わせ';
-        // } elseif ($category_id === '5' ) {
-        //     $category_idText = 'その他';
-        // }
-
-        $detail = $request->input('detail');
-
-        return view('confirm', compact('full_name', 'genderText', 'email', 'full_tel', 'address', 'category_id', 'building', 'detail'));
+        return view('confirm', compact('contacts', 'category'));
     }
 
-    public function store(ContatRequest $request)
+    // データベースへの登録(データベースのカラム順に記載する)
+    public function store(ContactRequest $request)
     {
-        $contact = [
-            'first_name' => $request->input('first_name'),
-            'last_name' => $request->input('last_name'),
-            'gender' => $request->input('gender'),
-            'email' => $request->input('email'),
-            'tel' => $request->input('tel'),
-            'address' => $request->input('address'),
-            'building' => $request->input('building'),
-            'category_id' => $request->input('category_id'),
-            'detail' => $request->input('detail')
-        ];  
+        // 修正ボタンが押されたときの挙動
+        if($request->has('back')){
+            return redirect('/')->withInput();
+        }
 
-        Contact::create($contact);
+        // 送信ボタンが押されたときの挙動
+        $request['tell'] = $request->tel_1 . $request->tel_2 . $request->tel_3;
+
+        // テーブルへのデータ追加
+        Contact::create(
+            $request->only([
+                'category_id',
+                'first_name',
+                'last_name',
+                'gender',
+                'email',
+                'tell',
+                'address',
+                'building',
+                'detail'
+            ])
+        );
 
         return view('thanks');
     }
